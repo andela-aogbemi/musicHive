@@ -10,33 +10,39 @@
 		<link href="css/app.css" type="text/css" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=Stalemate' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet' type='text/css'>
+
 		<title>Music Hive</title>
 	</head>
 	<body ng-controller='musicController'>
 		<div>
 			<header>
 				<h2 class="text-center">Music Hive</h2>
+			</header>	
+			<div class="top-bg">
+				<span>
+				<input type='text' ng-model='artist' placeholder='Enter artist name..'/></span>
+				<span><button ng-click='fetchArtist()' class='btn btn-success'>submit</button></span>
+				<br>
 				<p>Search for your favorite artist and play their tracks...</p>
-			</header>
-			<div class="input">
-			<form>	
-				<input type='text' ng-model='artist' placeholder='Enter artist name..'/>
-				<button ng-click='fetchArtist()' class='btn btn-success'>submit</button>
-			</form>
 			</div>
-			<div class="tracklist" ng-show="songs">
-					<ul>
-						<li ng-repeat="song in songs" class="list-group">
-							{{song.title}}
-							<audio controls>
+		  
+		  <div>{{error}}</div>
+
+			<div class="tracklist row" ng-show="songs">
+						<p id='info'>Click on the song title to play the full song</p>
+						<div class="col-md-6 cards" ng-repeat="song in songs">
+							<p><img ng-src={{song.album.cover}}></p>
+							<a href="{{song.link}}" target="_blank">{{song.title}}</a>
+							<br />
+							<audio id='control' controls>
 							  <source ng-src="{{song.preview}}" type="audio/mpeg">
 							</audio>
-						</li>
-					</ul>
+							
+						</div>
+					
 			</div>
-
+			
 		</div>
-		<div ng-model='error'>{{error}}</div>
 		
 	</body>
 </html>
