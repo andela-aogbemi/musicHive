@@ -13,7 +13,7 @@ h2 {
 	margin-top: 0;
 	color: white;
 	float: left;
-	padding-left: 15px;
+	padding-left: 40px;
 }
 
 p {
@@ -45,13 +45,13 @@ input {
 }
 
 .tracklist {
+	margin-top: 34px;
 	text-align: center;
 	font-size: 15px;
 	font-family: 'Andika', sans-serif;
 	clear: both;
   position: relative;
   border-top: 4px solid #f50;
-  padding: 70px 30% 70px 50px;
   margin: 0 auto;
   background-color: #e5e5e5;
   width: 90%;
@@ -84,8 +84,9 @@ li {
 #info {
 	font-family: 'Andika', sans-serif;
 	font-size: 25px;
-	margin-top: -70px;
+	margin-top: 8px;
 	color: #212D5A; 
+	border-bottom: 1px solid #212D5A;
 }
 
 a:link {
@@ -101,8 +102,23 @@ a:active {
     color: #0000FF;
 }
 
+audio {
+	width: 300px;
+}
 
+img {
+	margin: auto;
+}
 
+footer {
+	position: absolute;
+	padding-top: 30px;
+	text-align: center;
+	height: 57px;
+	color: white;
+	background-color: #212D5A;
+	width: 100%;
+}
 
 
 

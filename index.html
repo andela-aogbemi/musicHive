@@ -23,26 +23,23 @@
 				<input type='text' ng-model='artist' placeholder='Enter artist name..'/></span>
 				<span><button ng-click='fetchArtist()' class='btn btn-success'>submit</button></span>
 				<br>
-				<p>Search for your favorite artist and play their tracks...</p>
+				<p>Search for your favorite artists and play their tracks...</p>
 			</div>
 		  
 		  <div>{{error}}</div>
 
-			<div class="tracklist row" ng-show="songs">
-						<p id='info'>Click on the song title to play the full song</p>
-						<div class="col-md-6 cards" ng-repeat="song in songs">
-							<p><img ng-src={{song.album.cover}}></p>
-							<a href="{{song.link}}" target="_blank">{{song.title}}</a>
-							<br />
-							<audio id='control' controls>
-							  <source ng-src="{{song.preview}}" type="audio/mpeg">
-							</audio>
-							
-						</div>
-					
+					<div class="tracklist row" ng-show="songs">
+							<p id='info'>Click on the song title to play the full song</p>
+							<div class="col-md-4 cards" ng-repeat="song in songs">
+								<p><img ng-src={{song.album.cover}}></p>
+								<a href="{{song.link}}" target="_blank">{{song.title}}</a>
+								<br />
+								<audio id='control' controls>
+								  <source ng-src="{{song.preview}}" type="audio/mpeg">
+								</audio><br />
+							</div>
+					</div>
 			</div>
-			
-		</div>
-		
+			<footer>Anna Ogbemi-Ifediora. AngularJs Project</footer>
 	</body>
 </html>
